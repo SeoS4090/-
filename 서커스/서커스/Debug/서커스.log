@@ -1,0 +1,10 @@
+﻿  GameManager.cpp
+  BackGround.cpp
+c:\users\승현\desktop\ab4090\서커스\서커스\background.cpp(54): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: 'strcpy' 선언을 참조하십시오.
+  코드를 생성하고 있습니다...
+  건너뛰고 있습니다... (관련된 변경 내용 없음)
+  Player.cpp
+  Fire.cpp
+  서커스.vcxproj -> C:\Users\승현\Desktop\ab4090\서커스\Debug\서커스.exe
+  서커스.vcxproj -> C:\Users\승현\Desktop\ab4090\서커스\Debug\서커스.pdb (Full PDB)

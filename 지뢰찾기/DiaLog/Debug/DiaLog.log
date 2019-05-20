@@ -1,0 +1,4 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (DiaLog.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  메인소스.cpp
+  DiaLog.vcxproj -> C:\Users\승현\Desktop\ab4090\지뢰찾기\Debug\지뢰찾기.exe
+  DiaLog.vcxproj -> C:\Users\승현\Desktop\ab4090\지뢰찾기\Debug\지뢰찾기.pdb (Full PDB)

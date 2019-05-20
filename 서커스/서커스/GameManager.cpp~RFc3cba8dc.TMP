@@ -1,0 +1,153 @@
+#include "GameManager.h"
+#include "ResManager.h"
+#include "BitMap.h"
+#include "BackGround.h"
+#include "Player.h"
+#include "Fire.h"
+#include "Mecro.h"
+GameManager* GameManager::p_This = NULL;
+
+
+void GameManager::Release()
+{
+	ResManager::GetInstance()->Release();
+	SAFE_DELETE(m_BackGround);
+	SAFE_DELETE(m_Fire);
+	SAFE_DELETE(m_Player);
+	SAFE_DELETE(p_This);
+}
+
+GameManager::GameManager()
+{
+}
+
+
+GameManager::~GameManager()
+{
+}
+
+void GameManager::Init(HDC hdc , HINSTANCE g_hInst)
+{
+	BackDC = CreateCompatibleDC(hdc);
+	m_hBitmap = CreateCompatibleBitmap(hdc, 1024, 183+100+67+ 100);
+	m_Oldbitmap = (HBITMAP)SelectObject(BackDC, m_hBitmap);
+
+	ResManager::GetInstance()->Init(hdc ,g_hInst);
+
+	m_BackGround = new BackGround();
+	m_BackGround->Init(hdc);
+
+	m_Fire = new Fire();
+	m_Fire->Init();
+
+	
+	m_Player = new Player();
+	m_Player->Init();
+	m_bjump = false;
+
+	m_Die = false;
+	m_Count = 0;
+
+	m_End = false;
+}
+
+void GameManager::Draw(HDC hdc)
+{
+	
+	m_BackGround->Draw(BackDC);
+	
+	m_Fire->Draw(BackDC,m_Player);
+	//m_Player->Draw(BackDC);
+	BitBlt(hdc, 0, 0, 1024, 400, BackDC, 0, 0, SRCCOPY);
+}
+
+void GameManager::Update(HWND hWnd)
+{
+	
+
+	m_BackGround->Save(m_Player->GetRect());
+
+	
+	if (m_Fire->Collider(m_Player->GetRect()))
+	{
+		if (m_Fire->GetCash())
+		{
+			m_Fire->SetBonus();
+			m_BackGround->PlusScore(10000);
+		}
+		else if (!m_Die && m_Fire->GetWin() && !m_End)
+		{
+			m_Player->Win();
+			m_BackGround->Win();
+			return;
+		}
+
+		else
+		{
+			if (!m_Die)
+			{
+				m_Player->Die();
+				m_BackGround->Die();
+				m_Fire->Die();
+				m_Die = true;
+				return;
+			}		
+		}
+		
+	}
+	m_BackGround->SetMove(m_Player->GetPosition());
+
+	if (m_Player->GetJump() && !m_Die)
+		m_Player->Jump();
+
+	m_Fire->Update();
+	m_Fire->SetMove(m_Player->GetPosition());
+	
+}
+
+void GameManager::Move(int key)
+{
+	if (!m_Die)
+	{
+		m_Player->Move(key);
+		
+		if (m_Count > 10)
+		{
+			if (key == VK_RIGHT)
+				m_BackGround->PlusScore(5);
+			else if (key == VK_LEFT)
+				m_BackGround->PlusScore(-5);
+			else if (key == VK_UP)
+				m_BackGround->PlusScore(5);
+			m_Count = 0;
+		}
+		m_Count++;
+	}
+	if (key == VK_SPACE && m_Die)
+	{
+		if (m_BackGround->GetEnd())
+		{
+			m_End = true;
+			return;
+		}
+
+		m_Player->SetPosition(m_BackGround->GetSavePoint());
+		m_Fire->SetPosition(m_BackGround->GetSavePoint());
+		m_BackGround->SetMove(m_BackGround->GetSavePoint());
+		m_Die = false;
+		m_BackGround->SetLive();
+	}
+}
+
+void GameManager::Restart(HDC hdc)
+{
+	m_BackGround->Init(hdc);
+	m_Fire->Init();
+	m_Player->Init();
+	m_bjump = false;
+
+	m_Die = false;
+	m_Count = 0;
+
+	m_End = false;
+}

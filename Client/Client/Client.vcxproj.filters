@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\Scene">
+      <UniqueIdentifier>{096b28f3-2209-4646-b3c6-968fd3ab762d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Scene">
+      <UniqueIdentifier>{b57e4bd5-f4f1-4e2a-aef9-02a727d019ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Scene\AirPlan">
+      <UniqueIdentifier>{e8ebbb1c-d705-4544-80a6-d80ec366a8ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Scene\ColorPaper">
+      <UniqueIdentifier>{7af7a318-f4af-4a59-a87d-52a54457b051}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Scene\AirPlan">
+      <UniqueIdentifier>{3ff430bb-cc22-4b48-b73c-dcb9a4af4981}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Scene\ColorPaper">
+      <UniqueIdentifier>{b3c8c13d-68b1-4af5-9811-81573e7671fc}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleScene.cpp">
+      <Filter>소스 파일\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectGameScene.cpp">
+      <Filter>소스 파일\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectManager.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Star.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="FeverEffect.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="AirPlanScene.cpp">
+      <Filter>소스 파일\Scene\AirPlan</Filter>
+    </ClCompile>
+    <ClCompile Include="AirPlan.cpp">
+      <Filter>소스 파일\Scene\AirPlan</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>소스 파일\Scene\AirPlan</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorPaperScene.cpp">
+      <Filter>소스 파일\Scene\ColorPaper</Filter>
+    </ClCompile>
+    <ClCompile Include="Paper.cpp">
+      <Filter>소스 파일\Scene\ColorPaper</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Defines.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleScene.h">
+      <Filter>헤더 파일\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectGameScene.h">
+      <Filter>헤더 파일\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectManager.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Star.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="FeverEffect.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="AirPlanScene.h">
+      <Filter>헤더 파일\Scene\AirPlan</Filter>
+    </ClInclude>
+    <ClInclude Include="AirPlan.h">
+      <Filter>헤더 파일\Scene\AirPlan</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>헤더 파일\Scene\AirPlan</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorPaperScene.h">
+      <Filter>헤더 파일\Scene\ColorPaper</Filter>
+    </ClInclude>
+    <ClInclude Include="Paper.h">
+      <Filter>헤더 파일\Scene\ColorPaper</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
